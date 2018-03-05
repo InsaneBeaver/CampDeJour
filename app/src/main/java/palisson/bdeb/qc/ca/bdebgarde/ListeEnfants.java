@@ -38,6 +38,20 @@ public class ListeEnfants {
 
     }
 
+    public void addEnfant(Enfant enfant){
+        liste.add(enfant);
+    }
+
+    public int indexOf(Enfant enfant){
+        return liste.indexOf(enfant);
+    }
+
+    public ArrayList<Enfant> getListe(){
+        ArrayList<Enfant> fakeList = liste;
+
+        return fakeList;
+    }
+
     public Enfant getEnfantParID(int id)
     {
         int pos = getPosition(id);

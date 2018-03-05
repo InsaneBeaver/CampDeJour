@@ -5,6 +5,7 @@ import android.app.Application;
 
 public class CampDeJour extends Application {
 
-    private ListeEnfants listeEnfants = null;
-    public ListeEnfants getListeEnfants() {return listeEnfants;}
+    private static ListeEnfants listeEnfants = null;
+    public static ListeEnfants getListeEnfants() {return listeEnfants;}
+    public static void addEnfant(Enfant enfant){listeEnfants.ajouterEnfant(enfant);}
 }
