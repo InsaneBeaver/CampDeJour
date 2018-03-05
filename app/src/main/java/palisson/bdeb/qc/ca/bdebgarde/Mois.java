@@ -35,7 +35,7 @@ public enum Mois {
     }
 
     public String getNom(){
-        
+        return this.nom;
     }
 
 
