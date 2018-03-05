@@ -18,14 +18,23 @@ public class ParentVueEnfantActivity extends AppCompatActivity {
     RadioButton boutonMasculin;
     RadioButton boutonFeminin;
 
-    Enfant enfant;
+    private Enfant enfant;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        enfant = new Enfant("Bob", false, Enfant.Sexe.F, -9000, "Robert", true, null, -1);
+        //enfant = new Enfant("Bob", false, Enfant.Sexe.F, -9000, "Robert", true, null, -1);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vue_parent_enfant);
+
+
+
+
+        int position = this.getIntent().getIntExtra(ListeParent.MESSAGE_EXTRA, 0);
+        enfant = CampDeJour.getListeEnfants().getEnfant(position);
+
+        EditText foo = (EditText)findViewById(R.id.champNom);
+        foo.setText("Foobar");
 
         nom = (EditText)findViewById(R.id.champNom);
         age = (EditText)findViewById(R.id.champAge);
@@ -42,9 +51,11 @@ public class ParentVueEnfantActivity extends AppCompatActivity {
         boutonFeminin = (RadioButton) findViewById(R.id.boutonFeminin);
         boutonMasculin = (RadioButton) findViewById(R.id.boutonMasculin);
 
-        Enfant enfant = new Enfant("Bob", false, Enfant.Sexe.F, -9000, "Robert", true, null, -1);
+        enfant = CampDeJour.getListeEnfants().getEnfant(getIntent().getIntExtra(ListeParent.MESSAGE_EXTRA, 0));
         chargerEnfant(enfant);
     }
+
+
     private void chargerEnfant(Enfant enfant)
     {
         nom.setText(enfant.getNom() + ", " + enfant.getPrenom());
@@ -54,5 +65,7 @@ public class ParentVueEnfantActivity extends AppCompatActivity {
         else boutonMasculin.setChecked(true);
         etat.setChecked(enfant.isEstPresent());
         // Faire date
+
     }
+
 }

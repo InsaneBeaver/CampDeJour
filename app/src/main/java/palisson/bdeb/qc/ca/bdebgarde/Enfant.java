@@ -1,6 +1,8 @@
 package palisson.bdeb.qc.ca.bdebgarde;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+
 
 
 public class Enfant {
@@ -32,6 +34,11 @@ public class Enfant {
 
     public Date getDateNaissance() {
         return dateNaissance;
+    }
+
+    public String stringDateNaissance(){
+        SimpleDateFormat formater = new SimpleDateFormat("y-M-d");
+        return formater.format(dateNaissance);
     }
 
     public void setDateNaissance(Date dateNaissance) {
