@@ -20,6 +20,8 @@
         <activity android:name=".LoginParent" />
         <activity android:name=".ListeParent" />
         <activity android:name=".ParentVueEnfantActivity"></activity>
+        <uses-permission android:name="android.permission.CAMERA" />
+        <uses-feature android:name="android.hardware.camera" />
     </application>
 
 </manifest>
