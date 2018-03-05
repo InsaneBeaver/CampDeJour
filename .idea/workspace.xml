@@ -32,39 +32,32 @@
       <file leaf-file-name="Enfant.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/palisson/bdeb/qc/ca/bdebgarde/Enfant.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="131" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="131" />
+            <state relative-caret-position="153">
+              <caret line="9" column="131" lean-forward="false" selection-start-line="9" selection-start-column="131" selection-end-line="9" selection-end-column="131" />
               <folding>
-                <element signature="e#526#527#0" expanded="true" />
-                <element signature="e#551#552#0" expanded="true" />
-                <element signature="e#581#582#0" expanded="true" />
-                <element signature="e#607#608#0" expanded="true" />
-                <element signature="e#645#646#0" expanded="true" />
-                <element signature="e#675#676#0" expanded="true" />
-                <element signature="e#713#714#0" expanded="true" />
-                <element signature="e#749#750#0" expanded="true" />
-                <element signature="e#805#806#0" expanded="true" />
-                <element signature="e#855#856#0" expanded="true" />
-                <element signature="e#883#884#0" expanded="true" />
-                <element signature="e#909#910#0" expanded="true" />
-                <element signature="e#944#945#0" expanded="true" />
-                <element signature="e#974#975#0" expanded="true" />
-                <element signature="e#1012#1013#0" expanded="true" />
-                <element signature="e#1045#1046#0" expanded="true" />
-                <element signature="e#1098#1099#0" expanded="true" />
-                <element signature="e#1142#1143#0" expanded="true" />
-                <element signature="e#1175#1176#0" expanded="true" />
-                <element signature="e#1204#1205#0" expanded="true" />
-                <element signature="e#1248#1249#0" expanded="true" />
-                <element signature="e#1284#1285#0" expanded="true" />
-                <element signature="e#1320#1321#0" expanded="true" />
-                <element signature="e#1352#1353#0" expanded="true" />
-                <element signature="e#1403#1404#0" expanded="true" />
-                <element signature="e#1445#1446#0" expanded="true" />
-                <element signature="e#1475#1476#0" expanded="true" />
-                <element signature="e#1502#1503#0" expanded="true" />
-                <element signature="e#1540#1541#0" expanded="true" />
-                <element signature="e#1572#1573#0" expanded="true" />
+                <marker date="1520273382954" expanded="true" signature="942:948" ph=" }" />
+                <marker date="1520273382954" expanded="true" signature="1002:1013" ph=" { " />
+                <marker date="1520273382954" expanded="true" signature="1048:1054" ph=" }" />
+                <marker date="1520273382954" expanded="true" signature="1080:1091" ph=" { " />
+                <marker date="1520273382954" expanded="true" signature="1102:1108" ph=" }" />
+                <marker date="1520273382954" expanded="true" signature="1141:1152" ph=" { " />
+                <marker date="1520273382954" expanded="true" signature="1167:1173" ph=" }" />
+                <marker date="1520273382954" expanded="true" signature="1209:1220" ph=" { " />
+                <marker date="1520273382954" expanded="true" signature="1238:1244" ph=" }" />
+                <marker date="1520273382954" expanded="true" signature="1295:1306" ph=" { " />
+                <marker date="1520273382954" expanded="true" signature="1335:1341" ph=" }" />
+                <marker date="1520273382954" expanded="true" signature="1372:1383" ph=" { " />
+                <marker date="1520273382954" expanded="true" signature="1397:1403" ph=" }" />
+                <marker date="1520273382954" expanded="true" signature="1445:1456" ph=" { " />
+                <marker date="1520273382954" expanded="true" signature="1477:1483" ph=" }" />
+                <marker date="1520273382954" expanded="true" signature="1517:1528" ph=" { " />
+                <marker date="1520273382954" expanded="true" signature="1545:1551" ph=" }" />
+                <marker date="1520273382954" expanded="true" signature="1600:1611" ph=" { " />
+                <marker date="1520273382954" expanded="true" signature="1638:1644" ph=" }" />
+                <marker date="1520273382954" expanded="true" signature="1672:1683" ph=" { " />
+                <marker date="1520273382954" expanded="true" signature="1695:1701" ph=" }" />
+                <marker date="1520273382954" expanded="true" signature="1737:1748" ph=" { " />
+                <marker date="1520273382954" expanded="true" signature="1765:1771" ph=" }" />
               </folding>
             </state>
           </provider>
@@ -74,12 +67,14 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/palisson/bdeb/qc/ca/bdebgarde/ListeEnfants.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="629">
-              <caret line="40" column="37" lean-forward="false" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
+              <caret line="54" column="37" lean-forward="false" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
               <folding>
                 <element signature="e#165#166#0" expanded="true" />
                 <element signature="e#206#207#0" expanded="true" />
-                <element signature="e#1420#1421#0" expanded="true" />
-                <element signature="e#1457#1458#0" expanded="true" />
+                <element signature="e#1698#1699#0" expanded="true" />
+                <element signature="e#1735#1736#0" expanded="true" />
+                <marker date="1520273382958" expanded="true" signature="1139:1295" ph="{...}" />
+                <marker date="1520273382958" expanded="true" signature="1352:1655" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -124,11 +119,11 @@
       <file leaf-file-name="ParentVueEnfantActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/palisson/bdeb/qc/ca/bdebgarde/ParentVueEnfantActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-182">
-              <caret line="38" column="55" lean-forward="true" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
+            <state relative-caret-position="-29">
+              <caret line="47" column="55" lean-forward="false" selection-start-line="47" selection-start-column="55" selection-end-line="47" selection-end-column="55" />
               <folding>
-                <element signature="e#1184#1359#0" expanded="true" />
-                <element signature="e#1358#1359#0" expanded="true" />
+                <element signature="e#1536#1537#0" expanded="true" />
+                <element signature="e#1606#1607#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -148,8 +143,10 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/palisson/bdeb/qc/ca/bdebgarde/CampDeJour.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" column="64" lean-forward="false" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="64" />
-              <folding />
+              <caret line="9" column="84" lean-forward="false" selection-start-line="9" selection-start-column="84" selection-end-line="9" selection-end-column="84" />
+              <folding>
+                <marker date="1520273382952" expanded="true" signature="328:330" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -158,8 +155,10 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/palisson/bdeb/qc/ca/bdebgarde/Accueil.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="19" column="35" lean-forward="false" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-              <folding />
+              <caret line="29" column="35" lean-forward="false" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+              <folding>
+                <marker date="1520273382949" expanded="true" signature="897:947" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1927,9 +1926,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="140" />
-    <option name="y" value="10" />
-    <option name="width" value="1355" />
+    <option name="x" value="144" />
+    <option name="y" value="8" />
+    <option name="width" value="1351" />
     <option name="height" value="836" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -1960,48 +1959,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Gradle Scripts" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidBuildScriptsGroupNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CampDeJour" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CampDeJour" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CampDeJour" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bdebgarde" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -2105,7 +2062,7 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520273361066" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520273723174" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2152,7 +2109,7 @@
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
       </Profilers>
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520273361066" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520273723175" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2334,7 +2291,7 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520273361068" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1520273723177" />
       </method>
     </configuration>
     <list size="1">
@@ -2395,38 +2352,38 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="140" y="10" width="1355" height="836" extended-state="0" />
+    <frame x="144" y="8" width="1351" height="836" extended-state="0" />
     <layout>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3319149" sideWeight="0.6949807" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31625184" sideWeight="0.5057915" order="13" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31625184" sideWeight="0.5057915" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31625184" sideWeight="0.49420848" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31625184" sideWeight="0.49420848" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="top" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24743778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="top" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24743778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24942085" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25019366" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3319149" sideWeight="0.6949807" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -2481,36 +2438,29 @@
         <state relative-caret-position="119">
           <caret line="7" column="131" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="131" />
           <folding>
-            <element signature="e#526#527#0" expanded="true" />
-            <element signature="e#551#552#0" expanded="true" />
-            <element signature="e#581#582#0" expanded="true" />
-            <element signature="e#607#608#0" expanded="true" />
-            <element signature="e#645#646#0" expanded="true" />
-            <element signature="e#675#676#0" expanded="true" />
-            <element signature="e#713#714#0" expanded="true" />
-            <element signature="e#749#750#0" expanded="true" />
-            <element signature="e#805#806#0" expanded="true" />
-            <element signature="e#855#856#0" expanded="true" />
-            <element signature="e#883#884#0" expanded="true" />
-            <element signature="e#909#910#0" expanded="true" />
-            <element signature="e#944#945#0" expanded="true" />
-            <element signature="e#974#975#0" expanded="true" />
-            <element signature="e#1012#1013#0" expanded="true" />
-            <element signature="e#1045#1046#0" expanded="true" />
-            <element signature="e#1098#1099#0" expanded="true" />
-            <element signature="e#1142#1143#0" expanded="true" />
-            <element signature="e#1175#1176#0" expanded="true" />
-            <element signature="e#1204#1205#0" expanded="true" />
-            <element signature="e#1248#1249#0" expanded="true" />
-            <element signature="e#1284#1285#0" expanded="true" />
-            <element signature="e#1320#1321#0" expanded="true" />
-            <element signature="e#1352#1353#0" expanded="true" />
-            <element signature="e#1403#1404#0" expanded="true" />
-            <element signature="e#1445#1446#0" expanded="true" />
-            <element signature="e#1475#1476#0" expanded="true" />
-            <element signature="e#1502#1503#0" expanded="true" />
-            <element signature="e#1540#1541#0" expanded="true" />
-            <element signature="e#1572#1573#0" expanded="true" />
+            <marker date="1520273382954" expanded="true" signature="942:948" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1002:1013" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1048:1054" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1080:1091" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1102:1108" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1141:1152" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1167:1173" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1209:1220" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1238:1244" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1295:1306" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1335:1341" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1372:1383" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1397:1403" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1445:1456" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1477:1483" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1517:1528" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1545:1551" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1600:1611" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1638:1644" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1672:1683" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1695:1701" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1737:1748" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1765:1771" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -2522,8 +2472,10 @@
           <folding>
             <element signature="e#165#166#0" expanded="true" />
             <element signature="e#206#207#0" expanded="true" />
-            <element signature="e#1420#1421#0" expanded="true" />
-            <element signature="e#1457#1458#0" expanded="true" />
+            <element signature="e#1698#1699#0" expanded="true" />
+            <element signature="e#1735#1736#0" expanded="true" />
+            <marker date="1520273382958" expanded="true" signature="1139:1295" ph="{...}" />
+            <marker date="1520273382958" expanded="true" signature="1352:1655" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2563,8 +2515,8 @@
         <state relative-caret-position="459">
           <caret line="33" column="53" lean-forward="false" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="54" />
           <folding>
-            <element signature="e#1184#1359#0" expanded="true" />
-            <element signature="e#1358#1359#0" expanded="true" />
+            <element signature="e#1536#1537#0" expanded="true" />
+            <element signature="e#1606#1607#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2573,7 +2525,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="64" lean-forward="false" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="64" />
-          <folding />
+          <folding>
+            <marker date="1520273382952" expanded="true" signature="328:330" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2581,7 +2535,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="19" column="35" lean-forward="false" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-          <folding />
+          <folding>
+            <marker date="1520273382949" expanded="true" signature="897:947" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2606,36 +2562,29 @@
         <state relative-caret-position="119">
           <caret line="7" column="131" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="131" />
           <folding>
-            <element signature="e#526#527#0" expanded="true" />
-            <element signature="e#551#552#0" expanded="true" />
-            <element signature="e#581#582#0" expanded="true" />
-            <element signature="e#607#608#0" expanded="true" />
-            <element signature="e#645#646#0" expanded="true" />
-            <element signature="e#675#676#0" expanded="true" />
-            <element signature="e#713#714#0" expanded="true" />
-            <element signature="e#749#750#0" expanded="true" />
-            <element signature="e#805#806#0" expanded="true" />
-            <element signature="e#855#856#0" expanded="true" />
-            <element signature="e#883#884#0" expanded="true" />
-            <element signature="e#909#910#0" expanded="true" />
-            <element signature="e#944#945#0" expanded="true" />
-            <element signature="e#974#975#0" expanded="true" />
-            <element signature="e#1012#1013#0" expanded="true" />
-            <element signature="e#1045#1046#0" expanded="true" />
-            <element signature="e#1098#1099#0" expanded="true" />
-            <element signature="e#1142#1143#0" expanded="true" />
-            <element signature="e#1175#1176#0" expanded="true" />
-            <element signature="e#1204#1205#0" expanded="true" />
-            <element signature="e#1248#1249#0" expanded="true" />
-            <element signature="e#1284#1285#0" expanded="true" />
-            <element signature="e#1320#1321#0" expanded="true" />
-            <element signature="e#1352#1353#0" expanded="true" />
-            <element signature="e#1403#1404#0" expanded="true" />
-            <element signature="e#1445#1446#0" expanded="true" />
-            <element signature="e#1475#1476#0" expanded="true" />
-            <element signature="e#1502#1503#0" expanded="true" />
-            <element signature="e#1540#1541#0" expanded="true" />
-            <element signature="e#1572#1573#0" expanded="true" />
+            <marker date="1520273382954" expanded="true" signature="942:948" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1002:1013" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1048:1054" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1080:1091" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1102:1108" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1141:1152" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1167:1173" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1209:1220" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1238:1244" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1295:1306" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1335:1341" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1372:1383" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1397:1403" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1445:1456" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1477:1483" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1517:1528" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1545:1551" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1600:1611" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1638:1644" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1672:1683" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1695:1701" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1737:1748" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1765:1771" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -2647,8 +2596,10 @@
           <folding>
             <element signature="e#165#166#0" expanded="true" />
             <element signature="e#206#207#0" expanded="true" />
-            <element signature="e#1420#1421#0" expanded="true" />
-            <element signature="e#1457#1458#0" expanded="true" />
+            <element signature="e#1698#1699#0" expanded="true" />
+            <element signature="e#1735#1736#0" expanded="true" />
+            <marker date="1520273382958" expanded="true" signature="1139:1295" ph="{...}" />
+            <marker date="1520273382958" expanded="true" signature="1352:1655" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2687,7 +2638,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="64" lean-forward="false" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="64" />
-          <folding />
+          <folding>
+            <marker date="1520273382952" expanded="true" signature="328:330" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2695,7 +2648,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="19" column="35" lean-forward="false" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-          <folding />
+          <folding>
+            <marker date="1520273382949" expanded="true" signature="897:947" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2712,8 +2667,8 @@
         <state relative-caret-position="442">
           <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
-            <element signature="e#1184#1359#0" expanded="true" />
-            <element signature="e#1358#1359#0" expanded="true" />
+            <element signature="e#1536#1537#0" expanded="true" />
+            <element signature="e#1606#1607#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2738,16 +2693,20 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/palisson/bdeb/qc/ca/bdebgarde/CampDeJour.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="64" lean-forward="false" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="64" />
-          <folding />
+          <caret line="9" column="84" lean-forward="false" selection-start-line="9" selection-start-column="84" selection-end-line="9" selection-end-column="84" />
+          <folding>
+            <marker date="1520273382952" expanded="true" signature="328:330" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/palisson/bdeb/qc/ca/bdebgarde/Accueil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="19" column="35" lean-forward="false" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-          <folding />
+          <caret line="29" column="35" lean-forward="false" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+          <folding>
+            <marker date="1520273382949" expanded="true" signature="897:947" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2779,39 +2738,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/palisson/bdeb/qc/ca/bdebgarde/Enfant.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="131" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="131" />
+        <state relative-caret-position="153">
+          <caret line="9" column="131" lean-forward="false" selection-start-line="9" selection-start-column="131" selection-end-line="9" selection-end-column="131" />
           <folding>
-            <element signature="e#526#527#0" expanded="true" />
-            <element signature="e#551#552#0" expanded="true" />
-            <element signature="e#581#582#0" expanded="true" />
-            <element signature="e#607#608#0" expanded="true" />
-            <element signature="e#645#646#0" expanded="true" />
-            <element signature="e#675#676#0" expanded="true" />
-            <element signature="e#713#714#0" expanded="true" />
-            <element signature="e#749#750#0" expanded="true" />
-            <element signature="e#805#806#0" expanded="true" />
-            <element signature="e#855#856#0" expanded="true" />
-            <element signature="e#883#884#0" expanded="true" />
-            <element signature="e#909#910#0" expanded="true" />
-            <element signature="e#944#945#0" expanded="true" />
-            <element signature="e#974#975#0" expanded="true" />
-            <element signature="e#1012#1013#0" expanded="true" />
-            <element signature="e#1045#1046#0" expanded="true" />
-            <element signature="e#1098#1099#0" expanded="true" />
-            <element signature="e#1142#1143#0" expanded="true" />
-            <element signature="e#1175#1176#0" expanded="true" />
-            <element signature="e#1204#1205#0" expanded="true" />
-            <element signature="e#1248#1249#0" expanded="true" />
-            <element signature="e#1284#1285#0" expanded="true" />
-            <element signature="e#1320#1321#0" expanded="true" />
-            <element signature="e#1352#1353#0" expanded="true" />
-            <element signature="e#1403#1404#0" expanded="true" />
-            <element signature="e#1445#1446#0" expanded="true" />
-            <element signature="e#1475#1476#0" expanded="true" />
-            <element signature="e#1502#1503#0" expanded="true" />
-            <element signature="e#1540#1541#0" expanded="true" />
-            <element signature="e#1572#1573#0" expanded="true" />
+            <marker date="1520273382954" expanded="true" signature="942:948" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1002:1013" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1048:1054" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1080:1091" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1102:1108" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1141:1152" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1167:1173" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1209:1220" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1238:1244" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1295:1306" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1335:1341" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1372:1383" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1397:1403" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1445:1456" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1477:1483" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1517:1528" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1545:1551" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1600:1611" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1638:1644" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1672:1683" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1695:1701" ph=" }" />
+            <marker date="1520273382954" expanded="true" signature="1737:1748" ph=" { " />
+            <marker date="1520273382954" expanded="true" signature="1765:1771" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -2841,12 +2793,14 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/palisson/bdeb/qc/ca/bdebgarde/ListeEnfants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
-          <caret line="40" column="37" lean-forward="false" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
+          <caret line="54" column="37" lean-forward="false" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
           <folding>
             <element signature="e#165#166#0" expanded="true" />
             <element signature="e#206#207#0" expanded="true" />
-            <element signature="e#1420#1421#0" expanded="true" />
-            <element signature="e#1457#1458#0" expanded="true" />
+            <element signature="e#1698#1699#0" expanded="true" />
+            <element signature="e#1735#1736#0" expanded="true" />
+            <marker date="1520273382958" expanded="true" signature="1139:1295" ph="{...}" />
+            <marker date="1520273382958" expanded="true" signature="1352:1655" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2861,11 +2815,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/palisson/bdeb/qc/ca/bdebgarde/ParentVueEnfantActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-182">
-          <caret line="38" column="55" lean-forward="true" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
+        <state relative-caret-position="-29">
+          <caret line="47" column="55" lean-forward="false" selection-start-line="47" selection-start-column="55" selection-end-line="47" selection-end-column="55" />
           <folding>
-            <element signature="e#1184#1359#0" expanded="true" />
-            <element signature="e#1358#1359#0" expanded="true" />
+            <element signature="e#1536#1537#0" expanded="true" />
+            <element signature="e#1606#1607#0" expanded="true" />
           </folding>
         </state>
       </provider>
