@@ -16,7 +16,7 @@ public class Accueil extends AppCompatActivity {
 
 
     public void loginParent(View v){
-        Intent loginParent = new Intent(this, LoginParent.class);
+        Intent loginParent = new Intent(this, ParentVueEnfantActivity.class);
         startActivity(loginParent);
     }
 }
