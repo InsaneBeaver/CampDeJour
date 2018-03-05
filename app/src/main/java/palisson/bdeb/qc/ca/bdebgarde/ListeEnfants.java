@@ -1,5 +1,7 @@
 package palisson.bdeb.qc.ca.bdebgarde;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 
 public class ListeEnfants {
@@ -13,6 +15,7 @@ public class ListeEnfants {
 
     public int getPosition(int id)
     {
+
         int iMin = 0;
         int iMax = liste.size();
         int iMilieu = 0;
@@ -62,8 +65,11 @@ public class ListeEnfants {
 
     public void ajouterEnfant(Enfant nouvelEnfant)
     {
+        if(liste.size() == 0) {liste.add(nouvelEnfant); return; }
         int pos = getPosition(nouvelEnfant.getId());
         Enfant enfant = liste.get(pos);
+
+        if(liste.size() == 0) {liste.add(enfant); return; }
         if(enfant.getId() == nouvelEnfant.getId())
         {
             liste.remove(pos);
@@ -71,6 +77,7 @@ public class ListeEnfants {
         }
         else
             liste.add(pos + 1, nouvelEnfant);
+
     }
 
     public Enfant getEnfant(int pos)
