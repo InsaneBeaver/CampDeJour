@@ -24,10 +24,18 @@ public enum Mois {
     private final int numero;
     private final String nom;
 
-    Enfant(int numero, String nom){
+    Mois(int numero, String nom){
         this.numero = numero;
         this.nom = nom;
 
+    }
+
+    public int getNumero(){
+        return this.numero;
+    }
+
+    public String getNom(){
+        
     }
 
 
