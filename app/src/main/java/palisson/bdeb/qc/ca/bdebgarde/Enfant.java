@@ -109,8 +109,8 @@ public class Enfant {
     private Date dateNaissance;
     private int age;
 
-    public Enfant(String nom, Date dateNaissance){
-        this.nom = nom;
+    public Enfant(String prenom, Date dateNaissance){
+        this.prenom = prenom;
         this.dateNaissance = dateNaissance;
 
     }

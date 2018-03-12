@@ -32,7 +32,7 @@ public class EnfantsAdapter extends ArrayAdapter<Enfant> {
 
         TextView tvNom = (TextView) convertView.findViewById(R.id.tvNom);
         TextView tvDate = (TextView) convertView.findViewById(R.id.tvDate);
-        tvNom.setText(enfant.getNom());
+        tvNom.setText(enfant.getPrenom());
         tvDate.setText(enfant.stringDateNaissance());
 
         return convertView;
