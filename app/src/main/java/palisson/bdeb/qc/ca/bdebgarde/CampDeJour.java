@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 public class CampDeJour extends Application {
 
+    public static boolean isListeVide(){return listeEnfants.getListe().isEmpty();}
     private static ListeEnfants listeEnfants = new ListeEnfants();
     public static ListeEnfants getListeEnfants() {return listeEnfants;}
     public static void addEnfant(Enfant enfant){if(listeEnfants != null) listeEnfants.addEnfant(enfant);}

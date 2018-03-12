@@ -17,7 +17,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginParent" />
+        <activity
+            android:name=".LoginParent"
+            android:parentActivityName=".Accueil"/>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Accueil" />
+
         <activity android:name=".ListeParent" />
         <activity android:name=".ParentVueEnfantActivity"></activity>
     </application>
