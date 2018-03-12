@@ -9,6 +9,10 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ToggleButton;
 
+import java.text.DateFormat;
+import java.util.*;
+import java.time.*;
+
 public class ParentVueEnfantActivity extends AppCompatActivity {
     EditText nom;
     EditText age;
@@ -17,12 +21,11 @@ public class ParentVueEnfantActivity extends AppCompatActivity {
     ToggleButton etat;
     RadioButton boutonMasculin;
     RadioButton boutonFeminin;
-
+    DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, Locale.CANADA_FRENCH);
     private Enfant enfant;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //enfant = new Enfant("Bob", false, Enfant.Sexe.F, -9000, "Robert", true, null, -1);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vue_parent_enfant);
@@ -33,8 +36,7 @@ public class ParentVueEnfantActivity extends AppCompatActivity {
         int position = this.getIntent().getIntExtra(ListeParent.MESSAGE_EXTRA, 0);
         enfant = CampDeJour.getListeEnfants().getEnfant(position);
 
-        EditText foo = (EditText)findViewById(R.id.champNom);
-        foo.setText("Foobar");
+
 
         nom = (EditText)findViewById(R.id.champNom);
         age = (EditText)findViewById(R.id.champAge);
@@ -64,7 +66,7 @@ public class ParentVueEnfantActivity extends AppCompatActivity {
         if(enfant.getSexe() == Enfant.Sexe.F) boutonFeminin.setChecked(true);
         else boutonMasculin.setChecked(true);
         etat.setChecked(enfant.isEstPresent());
-        // Faire date
+        dateDeNaissance.setText(enfant.stringDateNaissance());
 
     }
 

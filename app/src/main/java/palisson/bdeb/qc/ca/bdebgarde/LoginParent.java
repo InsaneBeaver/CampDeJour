@@ -6,22 +6,26 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.view.Gravity;
+import android.app.*;
+import android.content.DialogInterface;
+
 
 public class LoginParent extends AppCompatActivity {
 
+    public final static String MESSAGE_MDP_PARENT = "MDPPARENT";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_parent);
+        ((EditText)findViewById(R.id.passwordText)).setGravity(Gravity.CENTER_HORIZONTAL);
     }
 
 
     private boolean checkPassword(){
         EditText passwordConfirmer = (EditText) findViewById(R.id.passwordText);
-        if(passwordConfirmer.getText().toString().equals("")||passwordConfirmer.getText().toString().equals(null))
-            return false;
-        else
-            return true;
+        String mdp = passwordConfirmer.getText().toString();
+        return CampDeJour.estBonMotDePasse(mdp);
     }
 
     public void finishLogin(View v){
@@ -31,8 +35,23 @@ public class LoginParent extends AppCompatActivity {
 
 
         if(checkPassword()) {
+
+            listeParent.putExtra(MESSAGE_MDP_PARENT, passwordConfirmer.getText().toString());
             passwordConfirmer.setText("");
             startActivity(listeParent);
+        }
+        else
+        {
+            AlertDialog alertDialog = new AlertDialog.Builder(LoginParent.this).create();
+            alertDialog.setTitle("Alerte");
+            alertDialog.setMessage("Mot de passe inconnu");
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+            alertDialog.show();
         }
     }
 }

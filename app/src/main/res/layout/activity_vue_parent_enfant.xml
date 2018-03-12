@@ -113,14 +113,14 @@
 
                 <RadioButton
                     android:id="@+id/boutonMasculin"
-                    android:focusable="false"
+                    android:clickable="false"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Masculin" />
 
                 <RadioButton
-                    android:focusable="false"
+                    android:clickable="false"
                     android:id="@+id/boutonFeminin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -148,7 +148,7 @@
                 android:layout_width="205dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="CheckBox" />
+                android:clickable="false" />
 
 
         </LinearLayout>

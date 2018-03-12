@@ -1,13 +1,18 @@
 package palisson.bdeb.qc.ca.bdebgarde;
 
+import android.os.Build;
+
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.util.Calendar;
+import java.util.*;
+import java.time.*;
 
 
 
 public class Enfant {
-
-    public Enfant(String prenom, boolean saitNager, Sexe sexe, int id, String nom, boolean estPresent, Date dateNaissance, int age) {
+    public Enfant(String prenom, boolean saitNager, Sexe sexe, int id, String nom, boolean estPresent, Date dateNaissance) {
         this.prenom = prenom;
         this.saitNager = saitNager;
         this.sexe = sexe;
@@ -15,7 +20,13 @@ public class Enfant {
         this.nom = nom;
         this.estPresent = estPresent;
         this.dateNaissance = dateNaissance;
-        this.age = age;
+
+        if (Build.VERSION.SDK_INT > 26) {
+            LocalDateTime now = LocalDateTime.now();
+            LocalDateTime naissance = LocalDateTime.ofInstant(dateNaissance.toInstant(), ZoneId.systemDefault());
+            age = (int)ChronoUnit.YEARS.between(naissance, now);
+        }
+
     }
 
     public enum Sexe {M, F};

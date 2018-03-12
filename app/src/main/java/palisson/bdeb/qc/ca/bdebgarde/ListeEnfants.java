@@ -50,9 +50,7 @@ public class ListeEnfants {
     }
 
     public ArrayList<Enfant> getListe(){
-        ArrayList<Enfant> fakeList = liste;
-
-        return fakeList;
+        return (ArrayList<Enfant>)liste.clone();
     }
 
     public Enfant getEnfantParID(int id)

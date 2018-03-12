@@ -1,5 +1,6 @@
 package palisson.bdeb.qc.ca.bdebgarde;
-
+import android.app.*;
+import android.content.DialogInterface;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -31,7 +32,6 @@ public class EnfantsAdapter extends ArrayAdapter<Enfant> {
 
         TextView tvNom = (TextView) convertView.findViewById(R.id.tvNom);
         TextView tvDate = (TextView) convertView.findViewById(R.id.tvDate);
-
         tvNom.setText(enfant.getNom());
         tvDate.setText(enfant.stringDateNaissance());
 
