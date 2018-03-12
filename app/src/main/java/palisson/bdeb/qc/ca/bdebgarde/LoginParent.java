@@ -9,16 +9,22 @@ import android.widget.EditText;
 import android.view.Gravity;
 import android.app.*;
 import android.content.DialogInterface;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
+import android.widget.Toast;
 
 
-public class LoginParent extends AppCompatActivity {
+public class LoginParent extends AppCompatActivity  implements View.OnClickListener  {
 
+    private IntentIntegrator qrScan;
     public final static String MESSAGE_MDP_PARENT = "MDPPARENT";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_parent);
         ((EditText)findViewById(R.id.passwordText)).setGravity(Gravity.CENTER_HORIZONTAL);
+        qrScan = new IntentIntegrator(this);
+
     }
 
 
@@ -27,6 +33,28 @@ public class LoginParent extends AppCompatActivity {
         String mdp = passwordConfirmer.getText().toString();
         return CampDeJour.estBonMotDePasse(mdp);
     }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if (result != null) {
+            //si pas information
+            if (result.getContents() == null) {
+                Toast.makeText(this, "Résultat pas Trouvé", Toast.LENGTH_LONG).show();
+            } else {
+                //si information
+                if (result.getContents().equals("Hello")) {
+                    Intent listeParent = new Intent(this, ListeParent.class);
+                    listeParent.putExtra(MESSAGE_MDP_PARENT, "2");
+
+                    startActivity(listeParent);
+                }
+
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
 
     public void finishLogin(View v){
         Intent listeParent = new Intent(this, ListeParent.class);
@@ -53,5 +81,10 @@ public class LoginParent extends AppCompatActivity {
                     });
             alertDialog.show();
         }
+    }    @Override
+    public void onClick(View v) {
+        //initiating the qr code scan
+        qrScan.initiateScan();
     }
+
 }
