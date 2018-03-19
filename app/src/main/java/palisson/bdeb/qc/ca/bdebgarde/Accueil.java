@@ -37,4 +37,9 @@ public class Accueil extends AppCompatActivity {
         Intent loginParent = new Intent(this, LoginParent.class);
         startActivity(loginParent);
     }
+
+    public void loginAdmin(View v){
+        Intent loginAdmin = new Intent(this, LoginAdmin.class);
+        startActivity(loginAdmin);
+    }
 }
