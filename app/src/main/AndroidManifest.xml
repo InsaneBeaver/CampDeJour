@@ -19,15 +19,31 @@
         </activity>
         <activity
             android:name=".LoginParent"
-            android:parentActivityName=".Accueil"/>
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Accueil" />
+            android:parentActivityName=".Accueil"
+            />
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".Accueil" />
 
+        <activity
+            android:name=".ListeParent"
+            android:parentActivityName=".LoginParent"
+            />
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY_2"
+            android:value=".LoginParent"
+            />
+        <activity
+            android:name=".ParentVueEnfantActivity"
+            android:parentActivityName=".ListeParent"
+            />
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY_3"
+            android:value=".ListeParent"
+            />
         <activity android:name=".ListeParent" />
         <activity android:name=".LoginAdmin" />
         <activity android:name=".ListeAdmin" />
-        <activity android:name=".ParentVueEnfantActivity"></activity>
     </application>
 
 </manifest>
