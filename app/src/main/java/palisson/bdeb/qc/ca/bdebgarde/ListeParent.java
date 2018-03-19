@@ -10,6 +10,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.app.*;
 import android.content.DialogInterface;
+import android.widget.Toast;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -27,6 +28,8 @@ public class ListeParent extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liste_parent);
+
+
         enfantAdapter = new EnfantsAdapter(this, CampDeJour.getEnfants(getIntent().getStringExtra(LoginParent.MESSAGE_MDP_PARENT)));
 
         listView = (ListView) findViewById(R.id.listName);
