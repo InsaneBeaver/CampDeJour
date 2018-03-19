@@ -37,7 +37,7 @@ public class LoginAdmin extends AppCompatActivity  {
 
             listeAdmin.putExtra(MESSAGE_MDP_ADMIN, passwordConfirmer.getText().toString());
             passwordConfirmer.setText("");
-          //  startActivity(listeAdmin);
+          // / startActivity(listeAdmin);
         }
         else
         {
