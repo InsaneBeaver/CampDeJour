@@ -20,12 +20,16 @@ public class Accueil extends AppCompatActivity {
         try {startService(serviceIntent);}
         catch(Exception e) {Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show(); }
 
-
     }
 
 
     public void loginParent(View v){
         Intent loginParent = new Intent(this, LoginParent.class);
         startActivity(loginParent);
+    }
+
+    public void loginAdmin(View v){
+        Intent loginAdmin = new Intent(this, LoginAdmin.class);
+        startActivity(loginAdmin);
     }
 }

@@ -22,7 +22,7 @@ public class ListeParent extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liste_parent);
-        Toast.makeText(this, getIntent().getStringExtra(LoginParent.MESSAGE_MDP_PARENT), Toast.LENGTH_LONG).show();
+       // Toast.makeText(this, getIntent().getStringExtra(LoginParent.MESSAGE_MDP_PARENT), Toast.LENGTH_LONG).show();
 
 
         enfantAdapter = new EnfantsAdapter(this, CampDeJour.listeEnfants);

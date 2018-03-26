@@ -23,6 +23,7 @@
         </activity>
         <activity
             android:name=".LoginParent"
+<<<<<<< HEAD
             android:parentActivityName=".Accueil" />
 
         <meta-data
@@ -31,24 +32,40 @@
 
         <activity
             android:name=".ListeParent"
+<<<<<<< HEAD
             android:parentActivityName=".LoginParent" />
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY_2"
             android:value=".LoginParent" />
 
+=======
+            android:parentActivityName=".LoginParent"
+            />
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY_2"
+            android:value=".LoginParent"
+            />
+>>>>>>> cc330e25933d852ad9d1cb5eca9c10beeb864922
         <activity
             android:name=".ParentVueEnfantActivity"
             android:parentActivityName=".ListeParent" />
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY_3"
+<<<<<<< HEAD
             android:value=".ListeParent" />
 
         <service
             android:name=".ServiceClient"
             android:enabled="true"
             android:exported="true"></service>
+=======
+            android:value=".ListeParent"
+            />
+        <activity android:name=".LoginAdmin" />
+        <activity android:name=".ListeAdmin" />
+>>>>>>> cc330e25933d852ad9d1cb5eca9c10beeb864922
     </application>
 
 </manifest>

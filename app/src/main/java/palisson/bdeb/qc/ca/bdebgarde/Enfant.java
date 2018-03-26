@@ -7,6 +7,7 @@ import java.util.*;
 
 
 
+
 public class Enfant {
     public Enfant(String prenom, boolean saitNager, Sexe sexe, int id, String nom, boolean estPresent, Date dateNaissance) {
         this.prenom = prenom;
@@ -17,6 +18,7 @@ public class Enfant {
         this.estPresent = estPresent;
         this.dateNaissance = dateNaissance;
     }
+
 
     public Enfant(JSONObject enfant)
     {
@@ -46,18 +48,16 @@ public class Enfant {
         this.nom = nom;
     }
 
-    public Date getDateNaissance() {
+   public Date getDateNaissance() {
         return dateNaissance;
     }
 
-    public String stringDateNaissance(){
+  public String stringDateNaissance(){
         SimpleDateFormat formater = new SimpleDateFormat("y-M-d");
         return formater.format(dateNaissance);
     }
 
-    public void setDateNaissance(Date dateNaissance) {
-        this.dateNaissance = dateNaissance;
-    }
+
 
 
     public int getAge() {
@@ -98,8 +98,12 @@ public class Enfant {
         return sexe;
     }
 
-    public void setSexe(Sexe sexe) {
-        this.sexe = sexe;
+    public void setSexeM() {
+        this.sexe = Sexe.M;
+    }
+
+    public void setSexeF() {
+        this.sexe = Sexe.F;
     }
 
     private String prenom;
@@ -112,10 +116,6 @@ public class Enfant {
     private Date dateNaissance;
     private int age;
 
-    public Enfant(String prenom, Date dateNaissance){
-        this.prenom = prenom;
-        this.dateNaissance = dateNaissance;
 
-    }
 
 }
