@@ -6,12 +6,10 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.ToggleButton;
 
 import java.text.DateFormat;
 import java.util.*;
-import java.time.*;
 
 public class ParentVueEnfantActivity extends AppCompatActivity {
     EditText nom;
@@ -30,13 +28,8 @@ public class ParentVueEnfantActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vue_parent_enfant);
 
-
-
-
         int position = this.getIntent().getIntExtra(ListeParent.MESSAGE_EXTRA, 0);
-        enfant = CampDeJour.getListeEnfants().getEnfant(position);
-
-
+        enfant = CampDeJour.listeEnfants.get(position);
 
         nom = (EditText)findViewById(R.id.champNom);
         age = (EditText)findViewById(R.id.champAge);
@@ -48,12 +41,16 @@ public class ParentVueEnfantActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 enfant.setEstPresent(etat.isChecked());
+                CampDeJour.client.envoyerMessage(String.format("setpresence %s %d %d", CampDeJour.motDePasse, enfant.getId(), (etat.isChecked() ? 1 : 0)), new Client.SurReception() {
+                    @Override
+                    public void operation(String reponse) {}
+                });
             }
         });
         boutonFeminin = (RadioButton) findViewById(R.id.boutonFeminin);
         boutonMasculin = (RadioButton) findViewById(R.id.boutonMasculin);
 
-        enfant = CampDeJour.getListeEnfants().getEnfant(getIntent().getIntExtra(ListeParent.MESSAGE_EXTRA, 0));
+        enfant = CampDeJour.listeEnfants.get(getIntent().getIntExtra(ListeParent.MESSAGE_EXTRA, 0));
         chargerEnfant(enfant);
     }
 

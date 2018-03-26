@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="palisson.bdeb.qc.ca.bdebgarde">
+
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:name=".CampDeJour"
         android:allowBackup="true"
@@ -19,29 +23,32 @@
         </activity>
         <activity
             android:name=".LoginParent"
-            android:parentActivityName=".Accueil"
-            />
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Accueil" />
+            android:parentActivityName=".Accueil" />
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".Accueil" />
 
         <activity
             android:name=".ListeParent"
-            android:parentActivityName=".LoginParent"
-            />
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY_2"
-                android:value=".LoginParent"
-                />
+            android:parentActivityName=".LoginParent" />
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY_2"
+            android:value=".LoginParent" />
+
         <activity
             android:name=".ParentVueEnfantActivity"
-            android:parentActivityName=".ListeParent"
-            />
+            android:parentActivityName=".ListeParent" />
+
         <meta-data
             android:name="android.support.PARENT_ACTIVITY_3"
-            android:value=".ListeParent"
-            />
+            android:value=".ListeParent" />
 
+        <service
+            android:name=".ServiceClient"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

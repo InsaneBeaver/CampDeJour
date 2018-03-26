@@ -1,13 +1,9 @@
 package palisson.bdeb.qc.ca.bdebgarde;
 
-import android.os.Build;
 
+import org.json.JSONObject;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
-import java.util.Calendar;
 import java.util.*;
-import java.time.*;
 
 
 
@@ -20,13 +16,20 @@ public class Enfant {
         this.nom = nom;
         this.estPresent = estPresent;
         this.dateNaissance = dateNaissance;
+    }
 
-        if (Build.VERSION.SDK_INT > 26) {
-            LocalDateTime now = LocalDateTime.now();
-            LocalDateTime naissance = LocalDateTime.ofInstant(dateNaissance.toInstant(), ZoneId.systemDefault());
-            age = (int)ChronoUnit.YEARS.between(naissance, now);
+    public Enfant(JSONObject enfant)
+    {
+        try {
+            this.prenom = enfant.getString("prenom");
+            this.nom = enfant.getString("nom");
+            this.sexe = (enfant.getString("sexe").equals("M")) ? Sexe.M : Sexe.F;
+            this.id = enfant.getInt("id");
+            this.saitNager = enfant.getBoolean("saitNager");
+            this.estPresent = enfant.getBoolean("estPresent");
+            this.dateNaissance = new Date(); // TODO: Mettre qqchose ici
         }
-
+        catch(Exception e) {}
     }
 
     public enum Sexe {M, F};

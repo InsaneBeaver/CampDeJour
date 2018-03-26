@@ -5,16 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.app.*;
-import android.content.DialogInterface;
 import android.widget.Toast;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
+
 
 public class ListeParent extends AppCompatActivity {
 
@@ -31,11 +25,18 @@ public class ListeParent extends AppCompatActivity {
         Toast.makeText(this, getIntent().getStringExtra(LoginParent.MESSAGE_MDP_PARENT), Toast.LENGTH_LONG).show();
 
 
-        enfantAdapter = new EnfantsAdapter(this, CampDeJour.getEnfants(getIntent().getStringExtra(LoginParent.MESSAGE_MDP_PARENT)));
+        enfantAdapter = new EnfantsAdapter(this, CampDeJour.listeEnfants);
 
         listView = (ListView) findViewById(R.id.listName);
         listView.setOnItemClickListener(listeClickListener);
         listView.setAdapter(enfantAdapter);
+    }
+    @Override
+    protected void onDestroy()
+    {
+        super.onDestroy();
+        CampDeJour.listeEnfants.clear();
+        CampDeJour.motDePasse = "";
     }
 
     private AdapterView.OnItemClickListener listeClickListener = new AdapterView.OnItemClickListener() {
@@ -44,7 +45,7 @@ public class ListeParent extends AppCompatActivity {
             Enfant enfant = (Enfant) listView.getItemAtPosition(position);
 
             Intent intent = new Intent(ListeParent.this, ParentVueEnfantActivity.class);
-            intent.putExtra(MESSAGE_EXTRA, CampDeJour.getListeEnfants().indexOf(enfant));
+            intent.putExtra(MESSAGE_EXTRA, CampDeJour.listeEnfants.indexOf(enfant));
 
             startActivity(intent);
         }
