@@ -27,7 +27,7 @@ public class LoginParent extends AppCompatActivity  implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.passwordConfirmer = (EditText) findViewById(R.id.passwordText);
-        Toast.makeText(this, "TEXTE " + this.passwordConfirmer, Toast.LENGTH_LONG).show();
+    //    Toast.makeText(this, "TEXTE " + this.passwordConfirmer, Toast.LENGTH_LONG).show();
         setContentView(R.layout.activity_login_parent);
         ((EditText)findViewById(R.id.passwordText)).setGravity(Gravity.CENTER_HORIZONTAL);
         qrScan = new IntentIntegrator(this);

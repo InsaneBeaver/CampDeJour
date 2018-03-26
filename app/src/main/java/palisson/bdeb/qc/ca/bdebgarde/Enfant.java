@@ -8,18 +8,35 @@ import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.*;
 import java.time.*;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 
 
 public class Enfant {
-    public Enfant(String prenom, boolean saitNager, Sexe sexe, int id, String nom, boolean estPresent, Date dateNaissance) {
-        this.prenom = prenom;
-        this.saitNager = saitNager;
-        this.sexe = sexe;
-        this.id = id;
-        this.nom = nom;
-        this.estPresent = estPresent;
-        this.dateNaissance = dateNaissance;
+    public Enfant(String JSON) {
+        try {
+            JSON = "{\"nom\":\"jacques\",\"prenom\":\"boulanger\",\"saitNager\":true,\"sexe\":\"M\",\"id\":2,\"estPresent\":true,\"date\":\"1995-08-10\"}";
+            JSONObject jsonObj = new JSONObject(JSON);
+            SimpleDateFormat formater = new SimpleDateFormat("y-M-d");
+            this.prenom = jsonObj.getString("prenom");
+            this.saitNager = jsonObj.getBoolean("saitNager");
+            if (jsonObj.getString("sexe").charAt(0) == 'F') {
+                setSexeF();
+            } else if (jsonObj.getString("sexe").charAt(0) == 'M') {
+                setSexeM();
+            }
+            this.id = jsonObj.getInt("id");
+            this.nom = jsonObj.getString("nom");
+            this.estPresent = jsonObj.getBoolean("estPresent");
+          try   { this.dateNaissance = formater.parse(jsonObj.getString("date"));
+          } catch (Exception e) {
+
+          }
+        } catch (final JSONException e) {
+
+        }
 
         if (Build.VERSION.SDK_INT > 26) {
             LocalDateTime now = LocalDateTime.now();
@@ -43,18 +60,20 @@ public class Enfant {
         this.nom = nom;
     }
 
-    public Date getDateNaissance() {
+   public Date getDateNaissance() {
         return dateNaissance;
     }
 
-    public String stringDateNaissance(){
+  public String stringDateNaissance(){
         SimpleDateFormat formater = new SimpleDateFormat("y-M-d");
         return formater.format(dateNaissance);
     }
 
-    public void setDateNaissance(Date dateNaissance) {
+  /*  public void setDateNaissance(String dateString) {
+        SimpleDateFormat formater = new SimpleDateFormat("y-M-d");
+        formater.parse()
         this.dateNaissance = dateNaissance;
-    }
+    }*/
 
 
     public int getAge() {
@@ -95,8 +114,12 @@ public class Enfant {
         return sexe;
     }
 
-    public void setSexe(Sexe sexe) {
-        this.sexe = sexe;
+    public void setSexeM() {
+        this.sexe = Sexe.M;
+    }
+
+    public void setSexeF() {
+        this.sexe = Sexe.F;
     }
 
     private String prenom;
@@ -109,10 +132,9 @@ public class Enfant {
     private Date dateNaissance;
     private int age;
 
-    public Enfant(String prenom, Date dateNaissance){
+    /*public Enfant(String prenom, Date dateNaissance){
         this.prenom = prenom;
         this.dateNaissance = dateNaissance;
-
-    }
+    }*/
 
 }

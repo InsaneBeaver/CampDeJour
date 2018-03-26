@@ -17,18 +17,19 @@ public class Accueil extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accueil);
-        //((CampDeJour) this.getApplication()).getListeEnfants();
+        ((CampDeJour) this.getApplication()).getListeEnfants();
         CampDeJour.init();
-        Enfant hugo = new Enfant("Hugo", true, Enfant.Sexe.M, 0, "Foo", true, new Date(101, 4, 21));
+      /*  Enfant hugo = new Enfant("Hugo", true, Enfant.Sexe.M, 0, "Foo", true, new Date(101, 4, 21));
         Enfant guillaume = new Enfant("Guillaume", new Date(99, 8, 18));
-        Enfant olivier = new Enfant("Olivier", new Date(99, 6, 23));
+        Enfant olivier = new Enfant("Olivier", new Date(99, 6, 23));*/
+       Enfant boulanger = new Enfant("");
         ArrayList<Enfant> liste = new ArrayList<Enfant>();
-        liste.add(hugo);
+       liste.add(boulanger);
         CampDeJour.ajouterParent("2", liste);
         if(CampDeJour.isListeVide()) {
-            CampDeJour.addEnfant(hugo);
-            CampDeJour.addEnfant(guillaume);
-            CampDeJour.addEnfant(olivier);
+            //CampDeJour.addEnfant(hugo);
+            CampDeJour.addEnfant(boulanger);
+            //CampDeJour.addEnfant(olivier);
         }
     }
 
