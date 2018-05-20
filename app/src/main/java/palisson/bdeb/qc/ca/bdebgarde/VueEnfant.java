@@ -11,7 +11,7 @@ import android.widget.ToggleButton;
 import java.text.DateFormat;
 import java.util.*;
 
-public class ParentVueEnfantActivity extends AppCompatActivity {
+public class VueEnfant extends AppCompatActivity {
     EditText nom;
     EditText age;
     EditText dateDeNaissance;
@@ -28,8 +28,10 @@ public class ParentVueEnfantActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vue_parent_enfant);
 
-        int position = this.getIntent().getIntExtra(ListeParent.MESSAGE_EXTRA, 0);
-        enfant = CampDeJour.listeEnfants.get(position);
+
+        int position = this.getIntent().getIntExtra(ListeEnfants.MESSAGE_EXTRA, 0);
+
+        enfant = CampDeJour.interfaceClient.getListeEnfants().get(position);
 
         nom = (EditText)findViewById(R.id.champNom);
         age = (EditText)findViewById(R.id.champAge);
@@ -40,17 +42,24 @@ public class ParentVueEnfantActivity extends AppCompatActivity {
         etat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                enfant.setEstPresent(etat.isChecked());
-                CampDeJour.client.envoyerMessage(String.format("setpresence %s %d %d", CampDeJour.motDePasse, enfant.getId(), (etat.isChecked() ? 1 : 0)), new Client.SurReception() {
+                if(!CampDeJour.interfaceClient.estConnecte())
+                {
+                    etat.setChecked(enfant.isEstPresent());
+                    return;
+                }
+
+                CampDeJour.interfaceClient.setPresence(enfant, etat.isChecked(), new InterfaceClient.ChangerPresence() {
                     @Override
-                    public void operation(String reponse) {}
+                    public void changerPresence(boolean presence) {
+                        etat.setChecked(presence);
+                    }
                 });
+
             }
         });
         boutonFeminin = (RadioButton) findViewById(R.id.boutonFeminin);
         boutonMasculin = (RadioButton) findViewById(R.id.boutonMasculin);
 
-        enfant = CampDeJour.listeEnfants.get(getIntent().getIntExtra(ListeParent.MESSAGE_EXTRA, 0));
         chargerEnfant(enfant);
     }
 
@@ -66,5 +75,8 @@ public class ParentVueEnfantActivity extends AppCompatActivity {
         dateDeNaissance.setText(enfant.stringDateNaissance());
 
     }
+
+
+
 
 }

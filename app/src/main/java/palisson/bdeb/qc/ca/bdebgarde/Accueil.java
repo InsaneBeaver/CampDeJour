@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 
 public class Accueil extends AppCompatActivity {
@@ -15,21 +14,18 @@ public class Accueil extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accueil);
 
-        Intent serviceIntent = new Intent(this, ServiceClient.class);
-
-        try {startService(serviceIntent);}
-        catch(Exception e) {Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show(); }
+        try {
+            CampDeJour.interfaceClient = new InterfaceClient();
+            InterfaceClient.initialiserClient(this);
+        }
+        catch(Exception e) {}
 
     }
 
 
     public void loginParent(View v){
-        Intent loginParent = new Intent(this, LoginParent.class);
+        Intent loginParent = new Intent(this, PageDeLogin.class);
         startActivity(loginParent);
     }
 
-    public void loginAdmin(View v){
-        Intent loginAdmin = new Intent(this, LoginAdmin.class);
-        startActivity(loginAdmin);
-    }
 }

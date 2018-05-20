@@ -2,6 +2,7 @@ package palisson.bdeb.qc.ca.bdebgarde;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +13,10 @@ import java.util.ArrayList;
 
 
 public class EnfantsAdapter extends ArrayAdapter<Enfant> {
-    public EnfantsAdapter(Context context, ArrayList<Enfant> enfants){
-        super(context,0, enfants);
+
+    ArrayList<Enfant> listeEnfants;
+    public EnfantsAdapter(Context context, ArrayList<Enfant> listeEnfants){
+        super(context,0, listeEnfants); this.listeEnfants = (ArrayList<Enfant>)listeEnfants.clone();
     }
 
     @NonNull
@@ -32,4 +35,60 @@ public class EnfantsAdapter extends ArrayAdapter<Enfant> {
 
         return convertView;
     }
+
+    public void actualiser(ArrayList<Enfant> nouveauxEnfants)
+    {
+        super.clear();
+        for(Enfant enfant : nouveauxEnfants) {super.add(enfant); Log.i("Nouvel enfant", enfant.toString());}
+        this.listeEnfants = (ArrayList<Enfant>)nouveauxEnfants.clone();
+    }
+
+    public void restreindreRecherche(String texte)
+    {
+        super.clear();
+        if(texte.isEmpty() )
+            for(Enfant enfant : listeEnfants) super.add(enfant);
+
+
+        else {
+            ArrayList<String> mots = new ArrayList<>();
+            String motActuel = "";
+            char caractere;
+            for (int i = 0; i < texte.length(); i++) {
+                caractere = texte.charAt(i);
+                if (!Character.isLetter(caractere)) {
+                    if (caractere == ' ' && motActuel.length() != 0) {
+                        mots.add(motActuel);
+                        motActuel = "";
+                    }
+                } else
+                    motActuel += Character.toLowerCase(caractere);
+
+
+            }
+            if (motActuel.length() != 0)
+                mots.add(motActuel);
+
+            else if(mots.size() == 0)
+            {
+                for(Enfant enfant : listeEnfants) super.add(enfant);
+                return;
+            }
+
+
+            for (Enfant enfant : listeEnfants) {
+
+                boolean ok = false;
+                String nom = enfant.getNom().toLowerCase();
+                String prenom = enfant.getPrenom().toLowerCase();
+                for (String mot : mots)
+                    ok |= (nom.contains(mot) || prenom.contains(mot));
+
+                if (ok)
+                    super.add(enfant);
+            }
+        }
+
+    }
+
 }

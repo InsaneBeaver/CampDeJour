@@ -1,6 +1,9 @@
 package palisson.bdeb.qc.ca.bdebgarde;
 
 
+import android.util.Log;
+
+import org.json.JSONException;
 import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -8,7 +11,7 @@ import java.util.*;
 
 
 
-public class Enfant {
+public class Enfant implements Comparable<Enfant >{
     public Enfant(String prenom, boolean saitNager, Sexe sexe, int id, String nom, boolean estPresent, Date dateNaissance) {
         this.prenom = prenom;
         this.saitNager = saitNager;
@@ -23,15 +26,38 @@ public class Enfant {
     public Enfant(JSONObject enfant)
     {
         try {
+            System.out.println("Recu: " + enfant);
+            this.id = enfant.getInt("id");
             this.prenom = enfant.getString("prenom");
             this.nom = enfant.getString("nom");
             this.sexe = (enfant.getString("sexe").equals("M")) ? Sexe.M : Sexe.F;
-            this.id = enfant.getInt("id");
             this.saitNager = enfant.getBoolean("saitNager");
             this.estPresent = enfant.getBoolean("estPresent");
-            this.dateNaissance = new Date(); // TODO: Mettre qqchose ici
+
+            SimpleDateFormat parser=new SimpleDateFormat("EEE MMM d HH:mm:ss zzz yyyy");
+
+            this.dateNaissance = enfant.has("dateNaissance") ? parser.parse(enfant.getString("dateNaissance")) : new Date();
+
         }
-        catch(Exception e) {}
+        catch(Exception e) {
+            Log.i("Erreur", id + " " + e.getMessage());};
+    }
+
+
+
+    public Enfant(String enfant) throws JSONException
+    {
+        this(new JSONObject(enfant));
+    }
+
+    @Override
+    public int compareTo(Enfant o)
+    {
+        int comparaison = nom.compareTo(o.getNom());
+        if(comparaison == 0)
+            comparaison = prenom.compareTo(o.getPrenom());
+
+        return comparaison;
     }
 
     public enum Sexe {M, F};
@@ -53,9 +79,9 @@ public class Enfant {
     }
 
   public String stringDateNaissance(){
-        SimpleDateFormat formater = new SimpleDateFormat("y-M-d");
-        return formater.format(dateNaissance);
-    }
+      SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+      return formatter.format(dateNaissance);
+  }
 
 
 
