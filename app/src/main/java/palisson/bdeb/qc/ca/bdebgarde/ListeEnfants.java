@@ -19,7 +19,10 @@ public class ListeEnfants extends AppCompatActivity {
     private ListView listView;
     EnfantsAdapter enfantAdapter;
 
-
+    /**
+     * Pour créer l'activité
+     * @param savedInstanceState 
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +48,9 @@ public class ListeEnfants extends AppCompatActivity {
 
 
 
-
+    /**
+     * Appelé lorsque l'activité est détruite
+     */
     @Override
     protected void onDestroy()
     {
@@ -53,7 +58,8 @@ public class ListeEnfants extends AppCompatActivity {
         super.onDestroy();
 
     }
-
+    
+    // Lorsqu'un enfant est sélectionné
     private AdapterView.OnItemClickListener listeClickListener = new AdapterView.OnItemClickListener() {
         public void onItemClick(AdapterView parent, View v, int position, long id){
 
@@ -69,6 +75,10 @@ public class ListeEnfants extends AppCompatActivity {
         }
     };
 
+    /**
+     * Conséquence du fait d'appuyer sur le bouton "actualiser"
+     * @param v 
+     */
     public void actualiser(View v) {
 
         CampDeJour.interfaceClient.identification(CampDeJour.interfaceClient.getMotDePasse(), new Runnable() {

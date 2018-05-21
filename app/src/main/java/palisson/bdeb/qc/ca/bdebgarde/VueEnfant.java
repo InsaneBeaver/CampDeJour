@@ -12,16 +12,20 @@ import java.text.DateFormat;
 import java.util.*;
 
 public class VueEnfant extends AppCompatActivity {
-    EditText nom;
-    EditText age;
-    EditText dateDeNaissance;
-    CheckBox saitNager;
-    ToggleButton etat;
-    RadioButton boutonMasculin;
-    RadioButton boutonFeminin;
-    DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, Locale.CANADA_FRENCH);
+    private EditText nom;
+    private EditText age;
+    private EditText dateDeNaissance;
+    private CheckBox saitNager;
+    private ToggleButton etat;
+    private RadioButton boutonMasculin;
+    private RadioButton boutonFeminin;
+    private DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, Locale.CANADA_FRENCH);
     private Enfant enfant;
 
+    /**
+     * Sur la création de l'activité
+     * @param savedInstanceState 
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -64,6 +68,10 @@ public class VueEnfant extends AppCompatActivity {
     }
 
 
+    /**
+     * Sert à charger les informations de l'enfant
+     * @param enfant L'enfant
+     */
     private void chargerEnfant(Enfant enfant)
     {
         nom.setText(enfant.getNom() + ", " + enfant.getPrenom());

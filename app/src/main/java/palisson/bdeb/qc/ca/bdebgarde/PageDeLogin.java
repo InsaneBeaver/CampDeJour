@@ -23,6 +23,10 @@ public class PageDeLogin extends AppCompatActivity  implements View.OnClickListe
 
 
 
+    /**
+     * Crée l'activité
+     * @param savedInstanceState 
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,20 +41,10 @@ public class PageDeLogin extends AppCompatActivity  implements View.OnClickListe
 
     }
 
-/*
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        if (result != null) {
-            //si pas information
-            if (result.getContents() == null) {
-                Toast.makeText(this, "Résultat pas trouvé", Toast.LENGTH_LONG).show();
-            } else {
-                ouvrirListe(result.getContents());
-            }
-        }
-    }
-*/
-
+    /**
+     * Complète le log-in en effectuant l'authentification
+     * @param v 
+     */
     public void finishLogin(View v)
     {
         passwordConfirmer = (EditText) findViewById(R.id.passwordText);
@@ -68,7 +62,9 @@ public class PageDeLogin extends AppCompatActivity  implements View.OnClickListe
 
     }
 
-
+    /**
+     * Complète l'identification en ouvrant la prochaine activité
+     */
     private void completerIdentification()
     {
         passwordConfirmer.setText("");
@@ -83,6 +79,10 @@ public class PageDeLogin extends AppCompatActivity  implements View.OnClickListe
 
 
     }
+    /**
+     * Pour initier le scan QR
+     * @param v 
+     */
   @Override
     public void onClick(View v) {
         //initiating the qr code scan

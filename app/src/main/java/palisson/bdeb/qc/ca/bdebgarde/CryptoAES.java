@@ -19,6 +19,9 @@ public class CryptoAES
     private SecretKeySpec skeySpec;
     private SecretKey secretKey;
     
+    /**
+     * Constructeur. Génère une clé aléatoirement.
+     */
     public CryptoAES()
     {
         try {
@@ -30,18 +33,37 @@ public class CryptoAES
         catch(Exception e) {}
 
     }
-
-    public CryptoAES(String cleEncodee)
+    
+    /**
+     * Constructeur. Utilise la clé donnée.
+     * @param cle La clé, encodée en base 64.
+     */
+    public CryptoAES(String cle)
     {
-        skeySpec = new SecretKeySpec(Base64Coder.decode(cleEncodee), 0, 16, "AES");
+        skeySpec = new SecretKeySpec(Base64Coder.decode(cle), 0, 16, "AES");
     }
 
 
+    /**
+     * Pour avoir la clé, encodée en base 64
+     * @return La clé
+     */
     public String getCle()
     {
         return Base64Coder.encode(secretKey.getEncoded());
     }
     
+    /**
+     * Sert à encrypter un message
+     * @param message Le message
+     * @return Le message codé
+     * @throws NoSuchAlgorithmException
+     * @throws NoSuchPaddingException
+     * @throws IllegalBlockSizeException
+     * @throws BadPaddingException
+     * @throws InvalidAlgorithmParameterException
+     * @throws InvalidKeyException 
+     */
     public String encryption(String message) throws NoSuchAlgorithmException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException, InvalidAlgorithmParameterException, InvalidKeyException
     {
         Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
@@ -59,12 +81,23 @@ public class CryptoAES
         return Base64Coder.encode(iv) + Base64Coder.encode(cipher.doFinal(message.getBytes()));
     }
     
-    public String decryption(String message) throws InvalidAlgorithmParameterException, InvalidKeyException, NoSuchAlgorithmException, NoSuchPaddingException, BadPaddingException, IllegalBlockSizeException
+    /**
+     * Sert à décoder un message
+     * @param messageCode Le message codé
+     * @return Le message
+     * @throws InvalidAlgorithmParameterException
+     * @throws InvalidKeyException
+     * @throws NoSuchAlgorithmException
+     * @throws NoSuchPaddingException
+     * @throws BadPaddingException
+     * @throws IllegalBlockSizeException 
+     */
+    public String decryption(String messageCode) throws InvalidAlgorithmParameterException, InvalidKeyException, NoSuchAlgorithmException, NoSuchPaddingException, BadPaddingException, IllegalBlockSizeException
     {
         Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
         int tailleVecteur = 24;
-        String ivChaine = message.substring(0, tailleVecteur);
-        String messageChaine = message.substring(tailleVecteur, message.length());
+        String ivChaine = messageCode.substring(0, tailleVecteur);
+        String messageChaine = messageCode.substring(tailleVecteur, messageCode.length());
         
         IvParameterSpec ivParams = new IvParameterSpec(Base64Coder.decode(ivChaine));
         

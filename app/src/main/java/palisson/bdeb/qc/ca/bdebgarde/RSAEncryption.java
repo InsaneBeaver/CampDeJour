@@ -2,7 +2,6 @@
 package palisson.bdeb.qc.ca.bdebgarde;
 
 
-import android.content.Context;
 
 import java.io.BufferedInputStream;
 import java.io.DataInputStream;
@@ -11,14 +10,21 @@ import java.io.InputStream;
 import java.security.KeyFactory;
 import java.security.NoSuchAlgorithmException;
 import java.security.PublicKey;
-import java.security.Signature;
 import java.security.spec.*;
 import java.util.*;
 import javax.crypto.Cipher;
+
 public class RSAEncryption {
 
     PublicKey clePublique;
     public final static int TAILLE_BRUIT = 16; // Caractères aléatoires mis à la fin du message. 16 caractères => une chance sur 5192296858534827628530496329220096 qu'un message soit encrypté de la même façon deux fois.
+    
+    /**
+     * Lit un fichier binaire
+     * @param stream Le stream du fichier
+     * @return Le contenu du fichier
+     * @throws IOException 
+     */
     public static byte[] lireFichier(InputStream stream) throws IOException
     {
         DataInputStream fichier = new DataInputStream(new BufferedInputStream(stream));
@@ -27,12 +33,24 @@ public class RSAEncryption {
         return bytes;
     }
 
-
+    /**
+     * Constructeur
+     * @param fichierClePublique L'inputstream du fichier
+     * @throws IOException
+     * @throws NoSuchAlgorithmException
+     * @throws InvalidKeySpecException 
+     */
     public RSAEncryption(InputStream fichierClePublique) throws IOException, NoSuchAlgorithmException, InvalidKeySpecException
     {
         this(lireFichier(fichierClePublique));
     }
 
+    /**
+     * Constructeur
+     * @param clePublique le contenu de la clé publique
+     * @throws NoSuchAlgorithmException
+     * @throws InvalidKeySpecException 
+     */
     public RSAEncryption(byte[] clePublique) throws NoSuchAlgorithmException, InvalidKeySpecException
     {
         KeyFactory kf = KeyFactory.getInstance("RSA");
@@ -42,6 +60,11 @@ public class RSAEncryption {
 
     }
 
+    /**
+     * Sert à encrypter un message
+     * @param message Le message
+     * @return Le message codé
+     */
     public String encrypter(String message)
     {
         // Mettre du bruit

@@ -15,6 +15,13 @@ import java.util.Map;
 public class CampDeJour extends Application {
     public static InterfaceClient interfaceClient;
 
+    /**
+     * Sert à afficher un message à l'utilisateur dans une boîte de dialogue
+     * @param contexte Le contexte
+     * @param message Le message
+     * @param titre Le titre de la boîte
+     * @param boutonPositif Le texte du bouton "OK"
+     */
     public static void afficherMessage(Context contexte, String message, String titre, String boutonPositif)
     {
         AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(contexte);
@@ -26,6 +33,11 @@ public class CampDeJour extends Application {
     }
 
     /// https://stackoverflow.com/a/28423385
+    /**
+     * Retourne l'activité actuellement en cours
+     * @return L'activité
+     * @throws Exception 
+     */
     public static Activity getActivity() throws Exception {
         Class activityThreadClass = Class.forName("android.app.ActivityThread");
         Object activityThread = activityThreadClass.getMethod("currentActivityThread").invoke(null);
@@ -51,6 +63,10 @@ public class CampDeJour extends Application {
         return null;
     }
 
+    /**
+     * Affiche un toast (petit message au bas de l'écran) avec ce message
+     * @param message Le message
+     */
     public static void afficherToast(final String message)
     {
         Handler handler = new Handler(Looper.getMainLooper());
@@ -67,6 +83,10 @@ public class CampDeJour extends Application {
 
     }
 
+    /**
+     * Exécute cette action de façon asynchrone (nécessaire pour les actions qui changent l'aspect graphique de l'activité)
+     * @param runnable L'action
+     */
     public static void execAsync(final Runnable runnable)
     {
         Handler handler = new Handler(Looper.getMainLooper());

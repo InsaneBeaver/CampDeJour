@@ -8,6 +8,10 @@ import android.view.View;
 
 public class Accueil extends AppCompatActivity {
 
+    /**
+     * Sur la création
+     * @param savedInstanceState 
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -22,7 +26,10 @@ public class Accueil extends AppCompatActivity {
 
     }
 
-
+    /**
+     * Sert à faire la transition vers la page de log-in
+     * @param v 
+     */
     public void loginParent(View v){
         Intent loginParent = new Intent(this, PageDeLogin.class);
         startActivity(loginParent);

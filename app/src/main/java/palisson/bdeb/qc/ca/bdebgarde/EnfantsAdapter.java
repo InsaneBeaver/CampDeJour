@@ -15,6 +15,11 @@ import java.util.ArrayList;
 public class EnfantsAdapter extends ArrayAdapter<Enfant> {
 
     ArrayList<Enfant> listeEnfants;
+    /**
+     * Constructeur
+     * @param context Le contexte
+     * @param listeEnfants La liste d'enfants
+     */
     public EnfantsAdapter(Context context, ArrayList<Enfant> listeEnfants){
         super(context,0, listeEnfants); this.listeEnfants = (ArrayList<Enfant>)listeEnfants.clone();
     }
@@ -36,6 +41,10 @@ public class EnfantsAdapter extends ArrayAdapter<Enfant> {
         return convertView;
     }
 
+    /**
+     * Actualise la liste d'enfants
+     * @param nouveauxEnfants Les nouveaux enfants
+     */
     public void actualiser(ArrayList<Enfant> nouveauxEnfants)
     {
         super.clear();
@@ -43,6 +52,10 @@ public class EnfantsAdapter extends ArrayAdapter<Enfant> {
         this.listeEnfants = (ArrayList<Enfant>)nouveauxEnfants.clone();
     }
 
+    /**
+     * Utilisé pour la barre de recherche
+     * @param texte Un texte qui doit être commun à tous les enfants dans la liste
+     */
     public void restreindreRecherche(String texte)
     {
         super.clear();

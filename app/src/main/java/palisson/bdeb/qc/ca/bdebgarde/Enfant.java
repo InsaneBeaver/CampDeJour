@@ -12,6 +12,29 @@ import java.util.*;
 
 
 public class Enfant implements Comparable<Enfant >{
+    
+    
+    private String prenom;
+    private boolean saitNager;
+    private Sexe sexe;
+    private int id;
+    private String nom;
+    private boolean estPresent;
+
+    private Date dateNaissance;
+    private int age;
+    
+    
+    /**
+     * Constructeur
+     * @param prenom Prénom de l'enfant
+     * @param saitNager Si l'enfant sait nager
+     * @param sexe Le sexe de l'enfant
+     * @param id L'identfiant de l'enfant
+     * @param nom Le nom de l'enfant
+     * @param estPresent Si l'enfant est présent
+     * @param dateNaissance La date de naissance de l'enfant
+     */
     public Enfant(String prenom, boolean saitNager, Sexe sexe, int id, String nom, boolean estPresent, Date dateNaissance) {
         this.prenom = prenom;
         this.saitNager = saitNager;
@@ -22,11 +45,14 @@ public class Enfant implements Comparable<Enfant >{
         this.dateNaissance = dateNaissance;
     }
 
-
+    /**
+     * Constructeur
+     * @param enfant L'objet JSON contenant l'enfant avec tous les attributs propres au premier constructeur, avec "M" pour masculin ou "F" pour féminin et une date de naissance en format "EEE MMM d HH:mm:ss zzz yyyy"
+     * 
+     */
     public Enfant(JSONObject enfant)
     {
         try {
-            System.out.println("Recu: " + enfant);
             this.id = enfant.getInt("id");
             this.prenom = enfant.getString("prenom");
             this.nom = enfant.getString("nom");
@@ -45,17 +71,27 @@ public class Enfant implements Comparable<Enfant >{
 
 
 
+    /**
+     * Constructeur
+     * @param enfant L'enfant en format JSON valide
+     * @throws JSONException 
+     */
     public Enfant(String enfant) throws JSONException
     {
         this(new JSONObject(enfant));
     }
 
+    /**
+     * Utilisé lors du triage en ordre alphabétique des enfants par leur prénom dans la liste
+     * @param o L'autre enfant
+     * @return Le résultat de la comparaison
+     */
     @Override
     public int compareTo(Enfant o)
     {
-        int comparaison = nom.compareTo(o.getNom());
+        int comparaison = nom.compareTo(o.getPrenom());
         if(comparaison == 0)
-            comparaison = prenom.compareTo(o.getPrenom());
+            comparaison = prenom.compareTo(o.getNom());
 
         return comparaison;
     }
@@ -132,15 +168,6 @@ public class Enfant implements Comparable<Enfant >{
         this.sexe = Sexe.F;
     }
 
-    private String prenom;
-    private boolean saitNager;
-    private Sexe sexe;
-    private int id;
-    private String nom;
-    private boolean estPresent;
-
-    private Date dateNaissance;
-    private int age;
 
 
 

@@ -25,6 +25,10 @@ public class InterfaceClient {
 
     class Session
     {
+        /**
+         * Contructeur
+         * @param motDePasse Mot de passe de la personne
+         */
         public Session(String motDePasse)
         {
             this.motDePasse = motDePasse;
@@ -44,6 +48,10 @@ public class InterfaceClient {
     {
         return session.motDePasse;
     }
+    
+    /**
+     * Supprime la session actuelle
+     */
     public void supprimerSession()
     {
         session = null;
@@ -51,9 +59,13 @@ public class InterfaceClient {
 
 
     private final static String COMMANDELISTE = "liste %s";
-    private final static String COMMANDEGETENFANT = "getenfant %s %d";
     private final static String COMMANDESETPRESENCE = "setpresence %s %d %d";
 
+    /**
+     * Initialise le client, qui est la connexion avec le serveur
+     * @param contexte
+     * @throws android.content.pm.PackageManager.NameNotFoundException 
+     */
     public static void initialiserClient(Context contexte) throws PackageManager.NameNotFoundException
     {
         client = new Client(contexte, new Client.SurChangementDeConnexion() {
@@ -75,6 +87,12 @@ public class InterfaceClient {
 
     private boolean estEnIdentification = false;
 
+    /**
+     * Accomplit l'identification
+     * @param motDePasse Le mot de passe
+     * @param surIdentification L'action à accomplir lorsque l'identification est réussie
+     * @param surErreurIdentification L'action à accomplie lorsque l'identification échoue
+     */
     public void identification(final String motDePasse, final Runnable surIdentification, final Runnable surErreurIdentification)
     {
         if(estEnIdentification) return;
@@ -131,6 +149,12 @@ public class InterfaceClient {
         void changerPresence(boolean presence);
     };
 
+    /**
+     * Sert à modifier la présence de l'enfant 
+     * @param enfant L'enfant
+     * @param presence Le nouvel état
+     * @param changerPresence Fonction pour modifier l'aspect graphique
+     */
     public void setPresence(final Enfant enfant, final boolean presence, final ChangerPresence changerPresence)
     {
         client.envoyerMessage(String.format(COMMANDESETPRESENCE, session.motDePasse, enfant.getId(), presence ? 1 : 0), new Client.SurReception() {
