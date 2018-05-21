@@ -17,13 +17,13 @@ public class Accueil extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accueil);
+        if(CampDeJour.interfaceClient == null)
+            try {
 
-        try {
-            CampDeJour.interfaceClient = new InterfaceClient();
-            System.out.println("reee");
-            InterfaceClient.initialiserClient(this);
-        }
-        catch(Exception e) {}
+                CampDeJour.interfaceClient = new InterfaceClient();
+                InterfaceClient.initialiserClient(this);
+            }
+            catch(Exception e) {}
 
     }
 

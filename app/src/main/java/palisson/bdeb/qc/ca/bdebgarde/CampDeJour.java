@@ -13,7 +13,7 @@ import java.util.Map;
 
 
 public class CampDeJour extends Application {
-    public static InterfaceClient interfaceClient;
+    public static InterfaceClient interfaceClient = null;
 
     /**
      * Sert à afficher un message à l'utilisateur dans une boîte de dialogue
