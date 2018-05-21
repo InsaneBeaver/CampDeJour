@@ -176,6 +176,18 @@ public class Client implements Runnable {
         catch(Exception e) { Log.i("Erreur", e.getMessage()); return false;}
     }
 
+    
+    public final static String getHash(String chaine)
+    {
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            String hash = Base64Coder.encode(digest.digest(chaine.getBytes(StandardCharsets.UTF_8)));
+            return hash;
+        }
+        catch(Exception e) {}
+        return "";
+    }
+
     /**
      * Envoie le message directement au serveur
      * @param message Le message à envoyer
@@ -184,17 +196,36 @@ public class Client implements Runnable {
      */
     private String[] envoyerAuServeur(String message) throws Exception
     {
+        
+        long tempsDepart = System.currentTimeMillis();
         String messageEncrypte = cryptoAES.encryption(message);
         versServeur.writeBytes(messageEncrypte + "\n");
         String[] reponses = new String[128];
         int iReponses = 0;
+        String hashMessagesRecu = "";
+        long tempsProductionRecu = 0;
         String reponse;
         while(!(reponse = duServeur.readLine()).isEmpty())
         {
-            reponses[iReponses] = cryptoAES.decryption(reponse);
-            Log.i("Reponse", reponses[iReponses]);
-            iReponses++;
+
+            reponse = cryptoAES.decryption(reponse);
+            if(hashMessagesRecu.isEmpty())
+            {
+                hashMessagesRecu = reponse.split(" ")[0];
+                tempsProductionRecu = Long.parseLong(reponse.split(" ")[1]);
+            }
+            
+            else
+            {
+                reponses[iReponses] = reponse;
+                iReponses++;
+            }
         }
+        String messageSecuriteAttendu = messageEncrypte;
+        for(int i = 0; i < reponses.length && reponses[i] != null; i++) messageSecuriteAttendu += reponses[i];
+        messageSecuriteAttendu = getHash(messageSecuriteAttendu);
+        if(!messageSecuriteAttendu.equals(hashMessagesRecu) || tempsProductionRecu <= tempsDepart)
+            throw new Exception("Données incohérentes reçues");
         return reponses;
     }
 
