@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginParent"
+            android:name=".PageDeLogin"
             android:parentActivityName=".Accueil" />
 
         <meta-data
@@ -30,25 +30,22 @@
             android:value=".Accueil" />
 
         <activity
-            android:name=".ListeParent"
-            android:parentActivityName=".LoginParent" />
+            android:name=".ListeEnfants"
+            android:parentActivityName=".PageDeLogin" />
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY_2"
             android:value=".LoginParent" />
 
         <activity
-            android:name=".ParentVueEnfantActivity"
-            android:parentActivityName=".ListeParent" />
+            android:name=".VueEnfant"
+            android:parentActivityName=".ListeEnfants" />
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY_3"
             android:value=".ListeParent" />
 
-        <service
-            android:name=".ServiceClient"
-            android:enabled="true"
-            android:exported="true"></service>
+
     </application>
 
 </manifest>

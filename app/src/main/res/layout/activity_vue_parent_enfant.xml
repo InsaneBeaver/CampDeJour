@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="palisson.bdeb.qc.ca.bdebgarde.ParentVueEnfantActivity"
+    tools:context="palisson.bdeb.qc.ca.bdebgarde.VueEnfant"
     tools:layout_editor_absoluteY="81dp">
 
     <!--tools:layout_editor_absoluteY="0dp"-->
@@ -173,6 +173,7 @@
 
         android:layout_marginBottom="321dp"
         android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="39dp"
         android:paddingBottom="2dp"
         android:paddingLeft="5dp"
