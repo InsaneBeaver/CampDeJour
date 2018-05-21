@@ -7,8 +7,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.*;
-
-
+import java.util.concurrent.TimeUnit;
 
 
 public class Enfant implements Comparable<Enfant >{
@@ -24,7 +23,17 @@ public class Enfant implements Comparable<Enfant >{
     private Date dateNaissance;
     private int age;
     
-    
+    private void calculerAge()
+    {
+        Calendar cal1 = Calendar.getInstance();
+        Calendar cal2 = Calendar.getInstance();
+
+        cal1.setTime(dateNaissance);
+        cal2.setTime(new Date());
+        age = cal2.get(Calendar.YEAR) - cal1.get(Calendar.YEAR);
+        if((cal1.get(Calendar.MONTH) > cal2.get(Calendar.MONTH)) ||
+                ((cal1.get(Calendar.MONTH) == cal2.get(Calendar.MONTH)) && (cal1.get(Calendar.DAY_OF_MONTH) > cal2.get(Calendar.DAY_OF_MONTH)))) age--;
+    }
     /**
      * Constructeur
      * @param prenom Prénom de l'enfant
@@ -43,6 +52,7 @@ public class Enfant implements Comparable<Enfant >{
         this.nom = nom;
         this.estPresent = estPresent;
         this.dateNaissance = dateNaissance;
+        calculerAge();
     }
 
     /**
@@ -65,6 +75,7 @@ public class Enfant implements Comparable<Enfant >{
             try {
             this.dateNaissance = enfant.has("dateNaissance") ? parser.parse(enfant.getString("dateNaissance")) : new Date();}
             catch(Exception e){this.dateNaissance = new Date(); }
+            calculerAge();
 
         }
         catch(Exception e) {
@@ -116,13 +127,14 @@ public class Enfant implements Comparable<Enfant >{
         return dateNaissance;
     }
 
+    /**
+     * Retourne la version formattée de la date de naissance
+     * @return La version formattée de la date de naissance
+     */
   public String stringDateNaissance(){
       SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
       return formatter.format(dateNaissance);
   }
-
-
-
 
     public int getAge() {
         return age;

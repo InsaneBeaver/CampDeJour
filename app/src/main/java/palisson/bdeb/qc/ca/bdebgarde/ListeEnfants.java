@@ -3,18 +3,13 @@ package palisson.bdeb.qc.ca.bdebgarde;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
+import android.text.*;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.EditText;
-import android.widget.ListView;
-
+import android.widget.*;
 
 public class ListeEnfants extends AppCompatActivity {
 
-    public static final String MESSAGE_EXTRA = "MESSAAAAGE";
+    public static final String MESSAGE_EXTRA = "messageenfant";
 
     private ListView listView;
     EnfantsAdapter enfantAdapter;
@@ -64,12 +59,10 @@ public class ListeEnfants extends AppCompatActivity {
         public void onItemClick(AdapterView parent, View v, int position, long id){
 
             Enfant enfant = (Enfant) enfantAdapter.getItem(position);
-            Log.i("POSITION-1", ""+position);
 
 
             Intent intent = new Intent(ListeEnfants.this, VueEnfant.class);
             intent.putExtra(MESSAGE_EXTRA, CampDeJour.interfaceClient.getListeEnfants().indexOf(enfant));
-            Log.i("POSITION", ""+CampDeJour.interfaceClient.getListeEnfants().indexOf(enfant));
 
             startActivity(intent);
         }

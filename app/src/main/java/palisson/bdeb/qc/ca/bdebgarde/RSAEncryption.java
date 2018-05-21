@@ -1,15 +1,9 @@
-
 package palisson.bdeb.qc.ca.bdebgarde;
 
 
 
-import java.io.BufferedInputStream;
-import java.io.DataInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.security.KeyFactory;
-import java.security.NoSuchAlgorithmException;
-import java.security.PublicKey;
+import java.io.*;
+import java.security.*;
 import java.security.spec.*;
 import java.util.*;
 import javax.crypto.Cipher;

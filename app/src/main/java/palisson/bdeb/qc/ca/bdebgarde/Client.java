@@ -1,21 +1,14 @@
 package palisson.bdeb.qc.ca.bdebgarde;
 
-import android.content.Intent;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
+import android.content.pm.*;
+import android.content.*;
 import android.os.Bundle;
 import android.util.Log;
 
 import java.io.*;
-import java.net.InetSocketAddress;
-import java.net.Socket;
-import java.net.SocketException;
+import java.net.*;
 import java.security.MessageDigest;
-import java.sql.SQLOutput;
-import java.util.Base64;
 import java.util.concurrent.LinkedBlockingQueue;
-import android.content.Context;
-
 
 
 public class Client implements Runnable {
@@ -45,7 +38,6 @@ public class Client implements Runnable {
      */
     private void actualiserHashCommun(String message)
     {
-        System.out.println("Nouveau message \\" + message + "\\");
         hashCommun = getHash(hashCommun + message);
     }
 
@@ -123,14 +115,18 @@ public class Client implements Runnable {
         commandesAEnvoyer.add(new AEnvoyer(message, surReception));
     }
 
-    DataOutputStream versServeur;
-    BufferedReader duServeur;
-    boolean estConnecte = false;
+    private DataOutputStream versServeur;
+    private BufferedReader duServeur;
+    private boolean estConnecte = false;
+
+    public boolean getEstConnecte()
+    {
+        return estConnecte;
+    }
 
     @Override
     public void run()
     {
-
         while(true)
         {
             boolean aDeconnecte = false;
@@ -142,8 +138,6 @@ public class Client implements Runnable {
                 estConnecte = effectuerConnexion();
                 if(estConnecte)
                     break;
-
-
 
                 if(!aDeconnecte) surChangementDeConnexion.surDeconnexion();
                 aDeconnecte = true;
@@ -194,10 +188,13 @@ public class Client implements Runnable {
         catch(Exception e) { Log.i("Erreur", e.getMessage()); return false;}
     }
 
-    
+    /**
+     * Pour calculer le hash d'une chaîne
+     * @param chaine La chaîne
+     * @return Le hash
+     */
     public final static String getHash(String chaine)
     {
-
      try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
             String hash = Base64Coder.encode(digest.digest(chaine.getBytes()));
@@ -256,7 +253,6 @@ public class Client implements Runnable {
         String[] reponses;
         AEnvoyer aEnvoyer = null;
         int compteur = 0;
-        System.out.println("En écoute...");
 
         try {
             while (true) {

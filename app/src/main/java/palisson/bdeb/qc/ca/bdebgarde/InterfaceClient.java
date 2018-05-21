@@ -5,14 +5,7 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.util.Log;
 
-import java.lang.reflect.Type;
-import java.util.Arrays;
-import org.json.JSONArray;
-import org.json.JSONException;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 
 public class InterfaceClient {
@@ -20,7 +13,7 @@ public class InterfaceClient {
 
     public static boolean estConnecte()
     {
-        return client.estConnecte;
+        return client.getEstConnecte();
     }
 
     class Session
@@ -40,8 +33,6 @@ public class InterfaceClient {
 
     public ArrayList<Enfant> getListeEnfants()
     {
-        System.out.println("INTERFACE " + this);
-        System.out.println("SESSION " + session);
         return (ArrayList<Enfant>)session.listeEnfants.clone();
     }
     public String getMotDePasse()
@@ -101,7 +92,6 @@ public class InterfaceClient {
         client.envoyerMessage(String.format(COMMANDELISTE, motDePasse), new Client.SurReception() {
             @Override
             public void operation(String reponse[]) {
-                System.out.println("La longueur de la formidable réponse " + reponse.length);
                 estEnIdentification = false;
                 if(reponse[0] == null) {
                     if(surErreurIdentification != null)
@@ -115,9 +105,7 @@ public class InterfaceClient {
                         InterfaceClient.this.session = new Session(motDePasse);
 
                         for (int i = 0; i < reponse.length && reponse[i] != null; i++) {
-                            System.out.println(reponse[i]);
                             Enfant enfant = new Enfant(reponse[i]);
-                            System.out.println(enfant.getNom());
                             session.listeEnfants.add(enfant);
                         }
 
