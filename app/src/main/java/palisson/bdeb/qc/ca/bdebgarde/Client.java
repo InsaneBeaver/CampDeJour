@@ -34,6 +34,13 @@ public class Client implements Runnable {
 
 
     private final int timeout = 1000;
+	
+    private String hashCommun;
+    
+    private void actualiserHashCommun(String message)
+    { 
+        hashCommun = getHash(hashCommun + message);
+    }
 
     interface SurChangementDeConnexion
     {
@@ -55,6 +62,7 @@ public class Client implements Runnable {
      */
     public Client(Context contexte, SurChangementDeConnexion surChangementDeConnexion) throws PackageManager.NameNotFoundException
     {
+		this.hashCommun = " ";
         try
         {
             cryptoAESTemp = new CryptoAES();
@@ -196,36 +204,31 @@ public class Client implements Runnable {
      */
     private String[] envoyerAuServeur(String message) throws Exception
     {
-        
-        long tempsDepart = System.currentTimeMillis();
+        actualiserHashCommun(message);
         String messageEncrypte = cryptoAES.encryption(message);
         versServeur.writeBytes(messageEncrypte + "\n");
         String[] reponses = new String[128];
         int iReponses = 0;
-        String hashMessagesRecu = "";
-        long tempsProductionRecu = 0;
+        String authentification = "";
         String reponse;
         while(!(reponse = duServeur.readLine()).isEmpty())
         {
-
             reponse = cryptoAES.decryption(reponse);
-            if(hashMessagesRecu.isEmpty())
-            {
-                hashMessagesRecu = reponse.split(" ")[0];
-                tempsProductionRecu = Long.parseLong(reponse.split(" ")[1]);
-            }
+            if(authentification.isEmpty())
+                authentification = reponse;
             
             else
             {
+                actualiserHashCommun(reponse);
                 reponses[iReponses] = reponse;
                 iReponses++;
             }
         }
-        String messageSecuriteAttendu = messageEncrypte;
-        for(int i = 0; i < reponses.length && reponses[i] != null; i++) messageSecuriteAttendu += reponses[i];
-        messageSecuriteAttendu = getHash(messageSecuriteAttendu);
-        if(!messageSecuriteAttendu.equals(hashMessagesRecu) || tempsProductionRecu <= tempsDepart)
-            throw new Exception("Données incohérentes reçues");
+        String authentificationAttendue = hashCommun;
+        if(!authentification.equals(authentificationAttendue))
+            throw new Exception("Authentification invalide");
+        
+        
         return reponses;
     }
 
@@ -255,7 +258,7 @@ public class Client implements Runnable {
                 else
                 {
                     compteur++;
-                    if(compteur % 500 == 0) {
+                    if(compteur % 1800 == 0) {
                         envoyerAuServeur("ping");
                         compteur = 0;
                     }
