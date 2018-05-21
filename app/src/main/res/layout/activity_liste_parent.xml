@@ -1,38 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="palisson.bdeb.qc.ca.bdebgarde.ListeParent"
-    tools:layout_editor_absoluteY="81dp">
-
-    <ListView
-        android:id="@+id/listName"
-        android:layout_width="479dp"
-        android:layout_height="419dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.419" />
+    tools:layout_editor_absoluteY="89dp">
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="572dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
+        android:layout_width="638dp"
+        android:layout_height="101dp"
+
+        android:layout_alignLeft="@+id/listName"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/listName"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="30dp"
         android:text="Liste d'enfants à la garde"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="66dp"
+        tools:layout_editor_absoluteY="108dp" />
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/boutonActualiser"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="157dp"
+        android:layout_height="157dp"
+        android:layout_alignEnd="@+id/listName"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/listName"
+        android:layout_marginBottom="71dp"
+        android:onClick="actualiser"
+        android:text="Actualiser"
+        tools:layout_editor_absoluteX="571dp"
+        tools:layout_editor_absoluteY="1044dp" />
+
+
+    <ListView
+        android:id="@+id/listName"
+        android:layout_width="742dp"
+        android:layout_height="651dp"
+
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        tools:layout_editor_absoluteX="14dp"
+        tools:layout_editor_absoluteY="322dp" />
+
+    <EditText
+        android:id="@+id/texteRecherche"
+        android:layout_width="400dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/boutonActualiser"
+        android:layout_alignLeft="@+id/listName"
+        android:layout_alignStart="@+id/listName"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:hint="Barre de recherche"
+        android:inputType="textPersonName"
+        android:text=" " />
+
+</RelativeLayout>
