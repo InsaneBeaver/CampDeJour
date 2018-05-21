@@ -101,13 +101,12 @@ public class InterfaceClient {
         client.envoyerMessage(String.format(COMMANDELISTE, motDePasse), new Client.SurReception() {
             @Override
             public void operation(String reponse[]) {
-                System.out.println(reponse.length);
+                System.out.println("La longueur de la formidable réponse " + reponse.length);
                 estEnIdentification = false;
-                if(reponse.length == 0) {
+                if(reponse[0] == null) {
                     if(surErreurIdentification != null)
                         CampDeJour.execAsync(surErreurIdentification);
 
-                    // TODO: MESSAGE PAR DÉFAUT
                 }
 
                 else

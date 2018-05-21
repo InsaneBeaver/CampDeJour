@@ -62,7 +62,9 @@ public class Enfant implements Comparable<Enfant >{
 
             SimpleDateFormat parser=new SimpleDateFormat("EEE MMM d HH:mm:ss zzz yyyy");
 
-            this.dateNaissance = enfant.has("dateNaissance") ? parser.parse(enfant.getString("dateNaissance")) : new Date();
+            try {
+            this.dateNaissance = enfant.has("dateNaissance") ? parser.parse(enfant.getString("dateNaissance")) : new Date();}
+            catch(Exception e){this.dateNaissance = new Date(); }
 
         }
         catch(Exception e) {

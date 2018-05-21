@@ -14,6 +14,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!-- Configuration du client -->
+        <meta-data android:name="adresseserveur" android:value="192.168.1.114"></meta-data>
+        <meta-data android:name="port" android:value="2000"></meta-data>
+
         <activity android:name=".Accueil">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

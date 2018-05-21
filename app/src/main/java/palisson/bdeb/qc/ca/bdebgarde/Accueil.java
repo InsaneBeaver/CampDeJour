@@ -20,6 +20,7 @@ public class Accueil extends AppCompatActivity {
 
         try {
             CampDeJour.interfaceClient = new InterfaceClient();
+            System.out.println("reee");
             InterfaceClient.initialiserClient(this);
         }
         catch(Exception e) {}

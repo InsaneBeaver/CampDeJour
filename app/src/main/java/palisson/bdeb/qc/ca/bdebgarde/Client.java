@@ -10,8 +10,8 @@ import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.SocketException;
-import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
+import java.sql.SQLOutput;
 import java.util.Base64;
 import java.util.concurrent.LinkedBlockingQueue;
 import android.content.Context;
@@ -32,16 +32,24 @@ public class Client implements Runnable {
 
     private final static String ASSETCLEPUBLIQUESERV = "clepubliqueserv";
 
-
+    // Le délai avant d'arrêter d'écouter
     private final int timeout = 1000;
-	
+
+
     private String hashCommun;
-    
+
+    /**
+     * Utilisé pour garantir plus de sécurité. Cette fonction est appelée pour chaque ligne envoyée/reçue des deux côtés, et
+     * la valeur encryptée de hashCommun est envoyée au client depuis le serveur à chaque échange pour garantir l'intégrité de la communication.
+     * @param message Le message envoyé ou reçu
+     */
     private void actualiserHashCommun(String message)
-    { 
+    {
+        System.out.println("Nouveau message \\" + message + "\\");
         hashCommun = getHash(hashCommun + message);
     }
 
+    // Les actions à effectuer sur connexion / déconnexion
     interface SurChangementDeConnexion
     {
         void surDeconnexion();
@@ -62,7 +70,7 @@ public class Client implements Runnable {
      */
     public Client(Context contexte, SurChangementDeConnexion surChangementDeConnexion) throws PackageManager.NameNotFoundException
     {
-		this.hashCommun = " ";
+
         try
         {
             cryptoAESTemp = new CryptoAES();
@@ -74,7 +82,7 @@ public class Client implements Runnable {
         }
         catch(Exception e)
         {
-            Log.i("Erreur", e.getMessage());
+            e.printStackTrace();
         }
 
         ApplicationInfo ai = contexte.getPackageManager().getApplicationInfo(contexte.getPackageName(), PackageManager.GET_META_DATA);
@@ -122,6 +130,7 @@ public class Client implements Runnable {
     @Override
     public void run()
     {
+
         while(true)
         {
             boolean aDeconnecte = false;
@@ -134,6 +143,8 @@ public class Client implements Runnable {
                 if(estConnecte)
                     break;
 
+
+
                 if(!aDeconnecte) surChangementDeConnexion.surDeconnexion();
                 aDeconnecte = true;
                 try {
@@ -142,14 +153,14 @@ public class Client implements Runnable {
                 catch(Exception e) {}
 
             }
-            CampDeJour.afficherToast("...");
+
             surChangementDeConnexion.surConnexion();
 
             try
             {
                 ecouter();
             }
-            catch(SocketException e) {Log.i("foo", e.getMessage()); estConnecte = false; }
+            catch(SocketException e) {Log.i("Erreur", e.getMessage()); estConnecte = false; }
         }
 
     }
@@ -170,7 +181,6 @@ public class Client implements Runnable {
          * tous les messages envoyés par un client donné.
          */
         try {
-            Log.i("La cle", "" + cleSymetriqueEncryptee);
             socket = new Socket();
             socket.connect(new InetSocketAddress(adresseServeur, port), timeout);
             versServeur = new DataOutputStream(socket.getOutputStream());
@@ -187,9 +197,10 @@ public class Client implements Runnable {
     
     public final static String getHash(String chaine)
     {
-        try {
+
+     try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
-            String hash = Base64Coder.encode(digest.digest(chaine.getBytes(StandardCharsets.UTF_8)));
+            String hash = Base64Coder.encode(digest.digest(chaine.getBytes()));
             return hash;
         }
         catch(Exception e) {}
@@ -216,7 +227,8 @@ public class Client implements Runnable {
             reponse = cryptoAES.decryption(reponse);
             if(authentification.isEmpty())
                 authentification = reponse;
-            
+
+
             else
             {
                 actualiserHashCommun(reponse);
@@ -225,9 +237,11 @@ public class Client implements Runnable {
             }
         }
         String authentificationAttendue = hashCommun;
-        if(!authentification.equals(authentificationAttendue))
+        if(iReponses > 0 && !authentification.equals(authentificationAttendue))
+        {
+            CampDeJour.afficherMessage(CampDeJour.getActivity(),"Authentification invalide, tentative d'attaque ou gaffe de programmation.", "Danger", "OK");
             throw new Exception("Authentification invalide");
-        
+        }
         
         return reponses;
     }
@@ -238,9 +252,12 @@ public class Client implements Runnable {
      */
     private void ecouter() throws SocketException
     {
+        this.hashCommun = " ";
         String[] reponses;
         AEnvoyer aEnvoyer = null;
         int compteur = 0;
+        System.out.println("En écoute...");
+
         try {
             while (true) {
                 if (!commandesAEnvoyer.isEmpty()) {
@@ -277,8 +294,10 @@ public class Client implements Runnable {
         {
             if(aEnvoyer != null)
                 aEnvoyer.surReception.surErreurConnexion();
+
+            e.printStackTrace();
         }
-        catch(Exception e) {CampDeJour.afficherToast(e.getMessage());}
+        catch(Exception e) {e.printStackTrace();}
 
     }
 
